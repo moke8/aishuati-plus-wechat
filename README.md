@@ -3,24 +3,6 @@
 
 具体内容可以查看[爱刷题PLUS--ADMIN](https://github.com/moke8/aishuati-plus-admin/)和[爱刷题PLUS--API](https://github.com/moke8/aishuati-plus-api/).
 
-## 后台优化
-
-### 录入优化
-支持JSON题库录入（[（WORD转json）](https://github.com/moke8/aishuati/)）、Excel题库录入、Word文档录入
-
-支持后台在线修改题库以及内容
-
-### 星标题库
-推荐的题库将在首页展示，并在题库列表页置顶
-
-### 题库统计
-后台支持统计7天和30天内题库访问次数、题目累计错题次数
-
-### 意见反馈
-允许用户直接反馈和错题反馈，帮助管理者更好的管理项目
-
-### 用户管理
-支持统计用户近7天和近30天的访问次数
 
 ## 小程序特点
 
@@ -42,20 +24,32 @@
 ### 答题情况概览
 支持答题情况概览和跳转
 
+## 后台优化
+
+### 录入优化
+支持JSON题库录入（[（WORD转json）](https://github.com/moke8/aishuati/)）、Excel题库录入、Word文档录入
+
+支持后台在线修改题库以及内容
+
+### 星标题库
+推荐的题库将在首页展示，并在题库列表页置顶
+
+### 题库统计
+后台支持统计7天和30天内题库访问次数、题目累计错题次数
+
+### 意见反馈
+允许用户直接反馈和错题反馈，帮助管理者更好的管理项目
+
+### 用户管理
+支持统计用户近7天和近30天的访问次数
+
 ## API端开发构思
 内容分为题库、意见反馈、使用记录、用户管理几个部分
 具体可以到[爱刷题PLUS--ADMIN](https://github.com/moke8/aishuati-plus-admin/)和[爱刷题PLUS--API](https://github.com/moke8/aishuati-plus-api/)中查看
 
 ## 配置
-### 小程序配置
-utils/global.js
-
-### 数据库配置
-sql/index.js
-
-## 开发
-API内容主要分为admin和wechat两个部分，分别对应管理后台和小程序的API。
-在层级上分为router、controllers、sql三个部分，也就是路由、控制器、数据库语句。
+### 请求配置
+utils/global.js  配置不同环境下的API服务地址
 
 ## 图片预览
 [![7NGQxg.md.jpg](https://s4.ax1x.com/2022/01/16/7NGQxg.md.jpg)](https://imgtu.com/i/7NGQxg)
