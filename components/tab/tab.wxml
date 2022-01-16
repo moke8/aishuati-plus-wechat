@@ -1,0 +1,15 @@
+<view id="container" class="container-c">
+    <view
+        wx:for="{{ list }}"
+        id="{{'tab' + index}}"
+        class="tab margin {{ active == index ? 'active' : ''}}"
+        bindtap="onTab"
+        data-index='{{ index }}'
+        wx:key="index"
+        
+    >
+        {{ item.title }}
+        <text class="num">{{ item.num }}</text>
+    </view>
+    <view class="current-active" animation="{{animationData}}" />
+</view>

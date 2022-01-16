@@ -1,0 +1,42 @@
+.container{
+    font-size: 28rpx;
+	min-height: 100vh;
+	background-color: #f2f3f5;
+}
+.bold{
+    font-weight: bold;
+}
+.important{
+    color: #e60012;
+    margin-right: 10rpx;
+}
+.btn:not([size=mini]){
+    width: 280rpx;
+    height: 70rpx;
+    background-color: #389aff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 400;
+    border-radius: 54rpx;
+    font-size: 28rpx;
+}
+
+.textarea{
+    background-color: #f2f3f5;
+    padding: 20rpx 30rpx;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 150rpx;
+}
+
+.clearBtn:not([size='mini']){
+    background: transparent;
+    width: unset;
+    font-size: inherit;
+    font-weight: inherit;
+    height: unset;
+    padding: unset;
+    color: inherit;
+}

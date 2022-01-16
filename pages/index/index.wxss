@@ -1,0 +1,48 @@
+.box {
+	position: absolute;
+    width: 100vw;
+    margin: 400rpx auto 0;
+	top: 0;
+	background-color: rgb(242,243,245);
+	border-radius: 24rpx 24rpx 0 0;
+	min-height: 100vh;
+	box-sizing: border-box;
+	padding: 30rpx;
+}
+.swiper{
+	width: 750rpx;
+	height: 440rpx;
+	position: absolute;
+    z-index: 0;
+}
+.swiper-image{
+	width: 750rpx;
+	height: 440rpx;
+}
+.timu-list{
+	padding-top: 20rpx;
+}
+.timu{
+	background-color: white;
+	border-radius: 24rpx;
+	box-sizing: border-box;
+	padding: 30rpx 60rpx;
+	margin: 24rpx 0;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.timu-title{
+	font-size: 30rpx;
+	font-weight: bold;
+}
+.timu-describe{
+	color: #666;
+	font-size: 26rpx;
+	margin-top: 16rpx;
+}
+
+.star{
+	width: 40rpx;
+	height: 40rpx;
+}

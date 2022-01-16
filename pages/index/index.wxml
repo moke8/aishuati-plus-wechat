@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+	<swiper class="swiper"  indicator-dots indicator-color="rgba(255,255,255,.3)" indicator-active-color="rgba(255,255,255,.8)" autoplay>
+		<swiper-item>
+			<image bindtap="follow" class="swiper-image" src="/assets/banner.png"></image>
+		</swiper-item>
+		<swiper-item>
+			<image bindtap="about" class="swiper-image" src="/assets/banner2.jpg"></image>
+		</swiper-item>
+	</swiper>
+	<!-- <background-image height="440rpx" bindtap="follow" src="/assets/banner.png" /> -->
+	<navigation-custom-title><text style="color: white">爱刷题</text></navigation-custom-title>
+
+	<official-account />
+	<view class="box">
+		<component-tab bindchange="onTab" active="{{active}}" list="{{[{title:'精选题库'},{title:'全部题库'}]}}" />
+		<view class="timu-list">
+			<view class="timu" wx:for="{{isStar ? starList : jsonList}}" wx:key="index" bindtap='goNext' data-id="{{item.id}}" data-name="{{item.title}}">
+					<view>
+						<view class="timu-title">{{item.title}}</view>
+					<view class="timu-describe">{{item.descr}}</view>
+					</view>
+					<view>
+						<image wx:if="{{item.orderNum !== '00000'}}" class="star" src="/assets/star.png"/>
+					</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,12 @@
+<view class="container">
+    <view class="head">
+        <image bindtap="search" class="search-icon" src="/assets/type/search.png" />
+        <input class="search" auto-focus confirm-type="search" bindconfirm="search" placeholder-class="search-placeholder"
+            placeholder="输入题目内容搜索本题库" />
+    </view>
+    <view class="title">搜索结果</view>
+    <view class="search-list">
+        <view class="timu" bindtap="next" wx:for="{{data}}" data-id="{{item.id}}"><label
+				class='type'>{{item.option.length?(item.answer.length>1?'多选':'单选'):(item.answer.length>16?'简答':'填空')}}</label>{{item.title}}</view>
+    </view>
+</view>

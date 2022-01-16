@@ -1,0 +1,9 @@
+{
+	"usingComponents": {
+		"background-image": "/components/background-image/background-image",
+		"navigation-custom-title": "/components/navigation-custom-title/navigation-custom-title",
+		"component-tab": "/components/tab/tab"
+	},
+	"navigationStyle": "custom",
+	"navigationBarTitleText": "爱刷题"
+}

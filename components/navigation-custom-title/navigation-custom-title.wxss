@@ -1,0 +1,21 @@
+.title {
+    color: #333;
+    display: block;
+    text-align: center;
+    height: 56rpx;
+    line-height: 56rpx;
+    font-size: 4vw;
+    padding-top: 0.8vw;
+    z-index: 1;
+    position: relative;
+}
+.back-box{
+    position: relative;
+}
+.back{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    left: 24rpx;
+    top: 10rpx;
+}

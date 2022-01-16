@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="head">
+        <image class="search-icon" src="/assets/type/search.png"/>
+        <input class="search" disabled bindtap="onSearch" placeholder-class="search-placeholder" placeholder="输入题目内容搜索本题库" />
+    </view>
+    <view class="title">请选择答题模式</view>
+    <view class="typeList">
+        <view class="type" wx:for="{{typeList}}" bindtap='goNext' data-id="{{item.id}}" data-title="{{item.name}}">
+            <image class="type-icon" src="/assets/type/icon-{{index}}.png"/>
+            <view class="type-title">
+                {{item.name}}
+            </view>
+            <view class="type-process" wx:if="{{item.id==='order' && processLength && process}}">
+                <text class="bold">{{process}}</text>/{{processLength}}
+            </view>
+        </view>
+    </view>
+</view>

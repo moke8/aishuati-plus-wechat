@@ -1,0 +1,11 @@
+<view class="container">
+    <view class="head">
+    </view>
+    <view class="box">
+        <view class="title"><text class="important">*</text>意见反馈</view>
+        <textarea style="min-height: 250rpx" value="{{content}}" bindinput="content" class="textarea" maxlength="100" auto-height placeholder="如果您有什么问题或意见、想法和期望，请告诉我们！"/>
+        <view class="title">联系方式</view>
+        <textarea class="textarea" value="{{contact}}" bindinput="contact" maxlength="30" auto-height placeholder="请输入您的QQ或微信，方便与您联系"/>
+        <button class="btn" bindtap="submit">提交</button>
+    </view>
+</view>

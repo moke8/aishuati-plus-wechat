@@ -1,0 +1,119 @@
+<view class="container {{mode}} size{{size}}">
+	<wxs src="./timu.wxs" module="util" />
+	<view class="head">
+		<view class="tab-switch">
+			<view class="tab {{isRecite?'':'active'}}" bindtap="switchNotRecite">答题</view>
+			<view class="tab {{isRecite?'active':''}}" bindtap="switchRecite">背题</view>
+		</view>
+		<image class="head-setting" bindtap="showSetting" src="/assets/timu/set.png"/>
+	</view>
+	<view class='timu box'>
+		<view class="card-title">
+			<label
+				class='type'>{{timu.option.length?(timu.answer.length>1?'多选':'单选'):(timu.answer.length>16?'简答':'填空')}}</label>{{timu.title}}
+		</view>
+		<view class=" card-describe">
+			<view class="options">
+				<view wx:for="{{timu.option}}" wx:key='index' bindtap='select' data-daan="{{index}}" class='option'>
+					<view
+						class="opt {{util.isHas(daan,index)!=-1?(answer?(util.isStrHas(timu.answer,index)!=-1?'success':'fail'):'select'):(answer?(util.isStrHas(timu.answer,index)!=-1?'success':''):'')}}">
+						{{zidian[index]}}</view>{{item}}
+				</view>
+			</view>
+			<textarea wx:if="{{!timu.option.length}}" bindinput="answerSync" value="{{daan}}" auto-height
+				class="textarea" placeholder="请在此处填写答案" />
+			<button class="btn answer-btn" wx:if="{{!timu.option.length}}" bindtap="previewAnswer">查看答案</button>
+			<button class="btn answer-btn" wx:else bindtap="huida">确定答案</button>
+			<view class="wrong" wx:if='{{options.type == "wrong"}}' bindtap='del'>我已学会，不再显示
+			</view>
+			<view class="operation">
+				<view class="operation-item" bindtap="exportFail">
+					<image src="/assets/timu/export.png" class="operation-icon"/>
+					<text>报错</text>
+				</view>
+				<button class="operation-item clearBtn" open-type="share">
+					<image src="/assets/timu/share.png" class="operation-icon"/>
+					<text>分享</text>
+				</button>
+			</view>
+		</view>
+	</view>
+	<view class="box" wx-if='{{answer || isRecite}}'>
+		<view wx:if='{{answer&&result===1}}' class='result success'>恭喜回答正确</view>
+		<view wx:if='{{answer&&result===0}}' class='result warning'>抱歉回答错误了哦！</view>
+		<view class="answer">正确答案：<text class="success">{{timu.answer}}</text>
+			<text wx:if="{{result===0}}">，你的答案：<text class="fail">{{util.daan(daan)}}</text>
+			</text>
+		</view>
+		<view class="analysis"><text class="bold">解析：</text>{{timu.analysis?timu.analysis:'该答案暂无解析'}}</view>
+	</view>
+	<view class="foot">
+		<view class="msg" bindtap="openOverview">
+			<view class='process'>
+				<image src="/assets/timu/menu.png" class="process-icon" />
+				<text class="bold">{{page+1}}</text>/{{data.length}}
+			</view>
+			<view class="preview">
+				<icon class="preview-icon" type="success" color="#4bc483" size="18" />
+				<text class="success">{{successNum}}</text>
+				<icon class="preview-icon" type="warn" color="#ff665a" size="18" />
+				<text class="fail">{{failNum}}</text>
+			</view>
+		</view>
+		<view class="pageControl">
+			<button class="btn" type="primary" bindtap="prev">
+				上一题
+			</button>
+			<button class="btn active" type="primary" bindtap="next">
+				下一题
+			</button>
+		</view>
+	</view>
+	<page-container show="{{isOverview || isSetting}}" bind:afterleave="hideContainer" overlay round>
+		<view class="overview" wx:if="{{isOverview}}">
+			<view bindtap="goSubject" data-index="{{index}}" class="overview-circular {{item.isSuccess?'success':(item.isSuccess===false?'fail':'')}}" wx:for="{{data}}">{{index+1}}</view>
+		</view>
+		<view class="setting" wx:if="{{isSetting}}">
+			<view class="setting-check-box">
+				<view>
+					<text>答对自动跳到下一题</text>
+					<switch color="#389aff" checked="{{autoNext}}" bindchange="switchAuto" class="switch"/>
+				</view>
+				<view>
+					<text>答题提示音</text>
+					<switch color="#389aff" checked="{{playAudio}}" bindchange="switchAudio" class="switch"/>
+				</view>
+			</view>
+			<view class="setting-font">
+				<view class="setting-font-text">
+					<text>特小</text>
+					<text>小</text>
+					<text>正常</text>
+					<text>大</text>
+					<text>特大</text>
+				</view>
+				<view class="setting-font-slider">
+					<text class="setting-font-mini">A</text>
+					<slider min="1" class="slider" bindchange="switchSize" value="{{size}}" backgroundColor="#e6e6e6" activeColor="#389aff" block-size="16"
+						block-color="#389aff" max="5" />
+					<text class="setting-font-large">A</text>
+				</view>
+				<view class="setting-mode"></view>
+			</view>
+			<view class="setting-mode">
+				<view class="setting-mode-item">
+					<image class="setting-mode-icon" bindtap="switchMode" data-mode="day" src="/assets/timu/day{{mode==='day'?'':'_1'}}.png"/>
+					<text class="{{mode==='day'?'active':''}}">日间模式</text>
+				</view>
+				<view class="setting-mode-item">
+					<image class="setting-mode-icon" bindtap="switchMode" data-mode="safe" src="/assets/timu/safe{{mode==='safe'?'':'_1'}}.png"/>
+					<text class="{{mode==='safe'?'active':''}}">护眼模式</text>
+				</view>
+				<view class="setting-mode-item">
+					<image class="setting-mode-icon" bindtap="switchMode" data-mode="night" src="/assets/timu/night{{mode==='night'?'':'_1'}}.png"/>
+					<text class="{{mode==='night'?'active':''}}">夜间模式</text>
+				</view>
+			</view>
+		</view>
+	</page-container>
+</view>

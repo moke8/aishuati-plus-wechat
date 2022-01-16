@@ -1,0 +1,7 @@
+<view class="title" style="padding-top:{{top}}px">
+	<view class="back-box">
+		<image class="back" bindtap="goBack" src="../../assets/img/back-black.png" wx:if="{{back && color=='black'}}"/>
+		<image class="back" bindtap="goBack" src="../../assets/img/back-white.png" wx:if="{{back && color=='white'}}"/>
+	</view>
+	<slot style="color:{{color}}"></slot>
+</view>

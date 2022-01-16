@@ -1,0 +1,9 @@
+.bg {
+    position: absolute;
+    z-index: 0;
+}
+
+.bg .img {
+    width: 100%;
+    max-height: 100%;
+}

@@ -1,0 +1,36 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/type/type",
+        "pages/timu/timu",
+        "pages/webview/webview",
+        "pages/opinion/opinion",
+        "pages/export-fail/export-fail"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#389aff",
+        "navigationBarTitleText": "爱刷题",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "ext-class": "tabbar",
+        "selectedColor": "#389AFF",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "我的题库",
+                "iconPath": "/assets/tabbar/timu_0.png",
+                "selectedIconPath": "/assets/tabbar/timu_1.png"
+            },
+            {
+                "pagePath": "pages/opinion/opinion",
+                "text": "意见反馈",
+                "iconPath": "/assets/tabbar/msg_0.png",
+                "selectedIconPath": "/assets/tabbar/msg_1.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

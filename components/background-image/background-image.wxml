@@ -1,0 +1,3 @@
+<view class="bg" style="width:{{width?width:'100%'}};height:{{height?height:'auto'}}">
+  <image class="img" style="width:{{width?width:'100%'}};{{height?('height:'+height):''}}" src="{{src}}"></image>
+</view>

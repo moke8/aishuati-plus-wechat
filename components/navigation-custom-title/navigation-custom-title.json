@@ -1,0 +1,5 @@
+{
+    "description" : "自定义头部标题",
+    "component": true,
+    "styleIsolation": "isolated"
+}

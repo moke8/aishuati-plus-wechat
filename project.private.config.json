@@ -1,0 +1,36 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/web-view/web-view",
+                    "pathName": "pages/webview/webview",
+                    "query": "",
+                    "scene": 1011
+                },
+                {
+                    "name": "pages/index/index",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "scene": 1001
+                },
+                {
+                    "name": "分享题目",
+                    "pathName": "pages/timu/timu",
+                    "query": "type=order&id=25&title=顺序练习&timu=543",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

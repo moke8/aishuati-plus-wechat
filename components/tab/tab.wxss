@@ -1,0 +1,38 @@
+.container-c {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 30rpx;
+    padding-top: 20rpx;
+    padding-bottom: 12rpx
+}
+
+
+.container-c .current-active {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80rpx;
+    height: 4rpx;
+    background: #389AFF;
+    border-radius: 3rpx
+}
+
+.tab {
+    margin-right: 35rpx;
+    font-size: 30rpx;
+}
+
+.tab.active {
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #389AFF;
+}
+
+.num {
+    font-size: 24rpx;
+    color: #9497B1;
+    margin: 0 0 10rpx 10rpx;
+    position: absolute
+}

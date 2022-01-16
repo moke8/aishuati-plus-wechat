@@ -1,0 +1,22 @@
+function isHas(data,item){
+  return data.indexOf(item)
+}
+function isStrHas(data,item){
+  var zidian = ['A', 'B', 'C', 'D', 'E']
+  data = data.split('')
+  return data.indexOf(zidian[item])
+}
+function daan(data){
+  var zidian = ['A', 'B', 'C', 'D', 'E']
+  var str = ""
+  for(var i=0;i < data.length;i++){
+    str += zidian[data[i]]
+  }
+  return str
+}
+
+module.exports= {
+  isHas: isHas,
+  isStrHas: isStrHas,
+  daan: daan
+}

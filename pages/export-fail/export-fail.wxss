@@ -1,0 +1,26 @@
+.container{
+    background-color: rgb(242,243,245);
+    min-height: 100vh;
+}
+.head{
+    height: 100rpx;
+    background-color: #389aff;
+}
+.box{
+    width: 690rpx;
+    margin: -60rpx auto 0;
+    background-color: white;
+    border-radius: 16rpx;
+    box-sizing: border-box;
+    padding: 30rpx 30rpx 60rpx;
+}
+
+.title{
+    margin: 20rpx 0;
+}
+
+
+
+.btn{
+    margin-top: 40rpx;
+}
